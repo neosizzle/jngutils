@@ -10,6 +10,8 @@ cat > "$REPO_PATH_GIT/hooks/commit-msg" << "EOF"
 # created by jngutils
 
 MSG="$(cat $1)"
+#  [ $MSG != "ci:*" ] && [ $MSG != "chore:*" ] && [ $MSG != "docs:*" ] \
+# && [ $MSG != "fix:*" ] && [ $MSG != "perf:*" ] && [ $MSG != "refactor:*" ] && [ $MSG != "revert:*" ] && [ $MSG != "style:*" ] && [ $MSG == "test:*" ] \
 
 if [ $MSG != "feat:*" ] && [ $MSG != "chore:*" ] ;
 	then
