@@ -10,7 +10,7 @@ cat > "$REPO_PATH_GIT/hooks/commit-msg" << "EOF"
 #!/bin/bash
 # created by jngutils
 
-MSG="$0"
+MSG="$2"
 
 echo "msg is $MSG"
 if [[ $MSG == z* ]] ;
