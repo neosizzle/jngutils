@@ -13,11 +13,11 @@ cat > "$REPO_PATH_GIT/hooks/commit-msg" << "EOF"
 MSG="$1"
 
 echo "msg is $MSG"
-# if [[ $MSG == "hello" ]] ;
-# 	then
-# 		echo "Your commit message must contain the word 'updated'"
-# 		exit 1
-# fi
+if [[ $MSG == "hello" ]] ;
+	then
+		echo "Your commit message must contain the word 'updated'"
+		exit 1
+fi
 EOF
 
 chmod 711 "$REPO_PATH_GIT/hooks/commit-msg"
