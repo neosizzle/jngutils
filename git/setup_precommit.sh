@@ -10,14 +10,15 @@ cat > "$REPO_PATH_GIT/hooks/commit-msg" << "EOF"
 #!/bin/bash
 # created by jngutils
 
-MSG="$2"
+# MSG="$2"
 
-echo "msg is $MSG"
-if [[ $MSG == "hello" ]] ;
-	then
-		echo "Your commit message must contain the word 'updated'"
-		exit 1
-fi
+# echo "msg is $MSG"
+# if [[ $MSG == "hello" ]] ;
+# 	then
+# 		echo "Your commit message must contain the word 'updated'"
+# 		exit 1
+# fi
+echo hello
 EOF
 
 chmod 711 "$REPO_PATH_GIT/hooks/commit-msg"
