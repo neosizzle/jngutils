@@ -11,10 +11,12 @@ cat > "$REPO_PATH_GIT/hooks/commit-msg" << "EOF"
 
 MSG="$(cat $1)"
 
-echo "msg is $MSG"
-if [[ $MSG == "hello*" ]] ;
+if [ $MSG == "feat:*" ] || [ $MSG == "chore:*" ] || [ $MSG == "ci:*" ] || [ $MSG == "chore:*" ] || [ $MSG == "docs:*" ] \
+|| [ $MSG == "fix:*" ] || [ $MSG == "perf:*" ] || [ $MSG == "refactor:*" ] || [ $MSG == "revert:*" ] || [ $MSG == "style:*" ]|| [ $MSG == "test:*" ] \
+ ;
 	then
-		echo "Your commit message must contain the word 'updated'"
+		echo "Your commit message type must be one of [build, chore, ci, docs, feat, fix, perf, refactor, revert, style, test]"
+		echo "Get help: https://github.com/conventional-changelog/commitlint/#what-is-commitlint" 
 		exit 1
 fi
 EOF
