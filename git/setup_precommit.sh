@@ -9,7 +9,7 @@ cat > "$REPO_PATH_GIT/hooks/commit-msg" << "EOF"
 #!/bin/bash
 # created by jngutils
 
-MSG="$1"
+MSG="$(cat $1)"
 
 echo "msg is $MSG"
 if [[ $MSG == "hello*" ]] ;
