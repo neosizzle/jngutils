@@ -13,7 +13,7 @@ cat > "$REPO_PATH_GIT/hooks/commit-msg" << "EOF"
 MSG="$2"
 
 echo "msg is $MSG"
-if [[ $MSG == z* ]] ;
+if [[ $MSG == "hello" ]] ;
 	then
 		echo "Your commit message must contain the word 'updated'"
 		exit 1
